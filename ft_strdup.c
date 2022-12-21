@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yokten <yokten@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 02:59:47 by yokten            #+#    #+#             */
-/*   Updated: 2022/12/21 02:59:49 by yokten           ###   ########.fr       */
+/*   Created: 2022/12/21 03:00:12 by yokten            #+#    #+#             */
+/*   Updated: 2022/12/21 04:00:19 by yokten           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- char *ft_strrchr(const char *s, int c)
- {
-    int len;
-
-    len = ft_strlen(s);
-    while(len >= 0)
-    {
-        if(s[len] == (char)c)
-            return((char *)&s[len]);
-        len--;
-    }
-    return(NULL);
- }
-/*
- int main()
+char    *ft_strdup(const char *s1)
 {
-	const char f[] = "yasar.furkan.enes";
-	int c = 46;
+    char *a;
+    int len;
+    size_t i;
 
-    printf("%p" , ft_strrchr(f, c));
-}  */
+    len = ft_strlen(s1) + 1;
+    a = malloc(len * sizeof(char));
+    i = 0;
+    if(!a)
+        return(0);
+    while(s1[i])
+    {
+        a[i] = s1[i];
+        i++;
+    }
+    a[i] = '\0';
+    return(a);
+}
+/*
+int main()
+{
+    char *a;
+
+    a = "furkan.yasar";
+    printf("%s", ft_strdup(a));
+}
+*/

@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yokten <yokten@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 02:59:47 by yokten            #+#    #+#             */
-/*   Updated: 2022/12/21 02:59:49 by yokten           ###   ########.fr       */
+/*   Created: 2022/12/21 06:40:55 by yokten            #+#    #+#             */
+/*   Updated: 2022/12/21 06:40:59 by yokten           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- char *ft_strrchr(const char *s, int c)
- {
-    int len;
-
-    len = ft_strlen(s);
-    while(len >= 0)
-    {
-        if(s[len] == (char)c)
-            return((char *)&s[len]);
-        len--;
-    }
-    return(NULL);
- }
-/*
- int main()
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	const char f[] = "yasar.furkan.enes";
-	int c = 46;
+    unsigned int i;
 
-    printf("%p" , ft_strrchr(f, c));
-}  */
+    i = 0;
+    if(!s || !f)
+        return;
+    while(s[i])
+    {
+        f(i , &s[i]);
+        i++;
+    }
+}

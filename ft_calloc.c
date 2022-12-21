@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yokten <yokten@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 02:59:47 by yokten            #+#    #+#             */
-/*   Updated: 2022/12/21 02:59:49 by yokten           ###   ########.fr       */
+/*   Created: 2022/12/21 03:00:43 by yokten            #+#    #+#             */
+/*   Updated: 2022/12/21 03:00:44 by yokten           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- char *ft_strrchr(const char *s, int c)
+ void   *ft_calloc(size_t count, size_t size)
  {
-    int len;
+    void *str;
 
-    len = ft_strlen(s);
-    while(len >= 0)
-    {
-        if(s[len] == (char)c)
-            return((char *)&s[len]);
-        len--;
-    }
-    return(NULL);
+    str = malloc(count * size);
+    if (!str)
+        return(0);
+    ft_bzero(str , (count * size));
+    return(str);
  }
 /*
  int main()
-{
-	const char f[] = "yasar.furkan.enes";
-	int c = 46;
-
-    printf("%p" , ft_strrchr(f, c));
-}  */
+ {
+    printf("%s", ft_calloc(2,2));
+ }*/

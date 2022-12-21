@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yokten <yokten@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 02:59:47 by yokten            #+#    #+#             */
-/*   Updated: 2022/12/21 02:59:49 by yokten           ###   ########.fr       */
+/*   Created: 2022/12/21 06:40:45 by yokten            #+#    #+#             */
+/*   Updated: 2022/12/21 06:40:51 by yokten           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- char *ft_strrchr(const char *s, int c)
- {
-    int len;
-
-    len = ft_strlen(s);
-    while(len >= 0)
-    {
-        if(s[len] == (char)c)
-            return((char *)&s[len]);
-        len--;
-    }
-    return(NULL);
- }
-/*
- int main()
+char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	const char f[] = "yasar.furkan.enes";
-	int c = 46;
+    if(!s || !f)
+        return(0);
+    char *a;
+    int i;
 
-    printf("%p" , ft_strrchr(f, c));
-}  */
+    i = 0;
+    a =(char *)malloc ((ft_strlen(s) + 1) * sizeof(char));
+    if(!a)
+        return(0);
+    while(s[i])
+    {
+        a[i] = f(i , s[i]);
+        i ++ ;
+    }
+    a[i] = '\0';
+    return(a);
+}

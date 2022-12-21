@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yokten <yokten@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 02:59:47 by yokten            #+#    #+#             */
-/*   Updated: 2022/12/21 02:59:49 by yokten           ###   ########.fr       */
+/*   Created: 2022/12/21 03:00:26 by yokten            #+#    #+#             */
+/*   Updated: 2022/12/21 03:00:27 by yokten           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
- char *ft_strrchr(const char *s, int c)
- {
-    int len;
-
-    len = ft_strlen(s);
-    while(len >= 0)
-    {
-        if(s[len] == (char)c)
-            return((char *)&s[len]);
-        len--;
-    }
-    return(NULL);
- }
-/*
- int main()
+void ft_putchar_fd(char c, int fd)
 {
-	const char f[] = "yasar.furkan.enes";
-	int c = 46;
-
-    printf("%p" , ft_strrchr(f, c));
-}  */
+    write(fd, &c, 1);
+}
+/*
+int main()
+{
+    int fd = open("sel.txt", O_RDWR | O_CREAT);
+    char c = 'a';
+     ft_putchar_fd(c, fd);
+    printf("%d", fd);
+}*/
