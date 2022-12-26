@@ -6,7 +6,7 @@
 /*   By: yokten <yokten@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 02:59:40 by yokten            #+#    #+#             */
-/*   Updated: 2022/12/21 02:59:41 by yokten           ###   ########.fr       */
+/*   Updated: 2022/12/26 02:49:41 by yokten           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
         len = 0;
     if(len > ft_strlen(s + start))
         len = ft_strlen(s + start);
-    a = malloc((len + 1) * sizeof(char));
+    a = ft_calloc((len + 1) , sizeof(char));
     if(!a)
         return(0);
     i = 0;
@@ -36,11 +36,3 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
     a[i] = '\0';
     return(a);
 }
-/*
-int main()
-{
-    char *a;
-
-    a = "yasarokten";
-    printf("%s",ft_substr(a, 4 , 4));
-}*/

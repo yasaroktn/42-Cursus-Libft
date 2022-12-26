@@ -6,7 +6,7 @@
 /*   By: yokten <yokten@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 19:00:55 by yokten            #+#    #+#             */
-/*   Updated: 2022/12/21 06:22:51 by yokten           ###   ########.fr       */
+/*   Updated: 2022/12/25 12:18:41 by yokten           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ int     ft_isprint (int c);
 int     ft_strncmp(const char *s1, const char *s2, size_t n);
 int	    ft_memcmp(const void *s1, const void *s2, size_t n);
 int     ft_atoi(const char *str);
-
 
 void    *ft_memset(void *b, int c, size_t len);
 void    ft_bzero(void *s, size_t n);
@@ -50,6 +49,7 @@ char    *ft_strjoin(char const *s1, char const *s2);
 char    *ft_strtrim(char const *s1, char const *set);
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char    *ft_itoa(int n);
+char    **ft_split(char const *s, char c);
 
 size_t  ft_strlen  (const char *c);
 size_t  ft_strlcpy(char * dst, const char *src, size_t dstsize);

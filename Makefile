@@ -6,7 +6,7 @@
 #    By: yokten <yokten@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 15:04:14 by yokten            #+#    #+#              #
-#    Updated: 2022/12/21 06:18:06 by yokten           ###   ########.fr        #
+#    Updated: 2022/12/25 23:19:48 by yokten           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,8 @@ SRCS	= ft_isalpha.c \
 		  ft_strtrim.c	\
 		  ft_strmapi.c	\
 		  ft_striteri.c \
+		  ft_itoa.c 	\
+		  ft_split.c	\
 
 SRCS_BONUS	= ft_lstnew.c \
 			  ft_lstadd_front.c \
