@@ -6,11 +6,11 @@
 #    By: yokten <yokten@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 15:04:14 by yokten            #+#    #+#              #
-#    Updated: 2022/12/25 23:19:48 by yokten           ###   ########.fr        #
+#    Updated: 2022/12/27 23:49:06 by yokten           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libft
+NAME	= libft.a
 CC = gcc
 INC = libft.h
 CFLAGS = -Wall -Wextra -Werror
@@ -53,23 +53,22 @@ SRCS	= ft_isalpha.c \
 		  ft_split.c	\
 
 SRCS_BONUS	= ft_lstnew.c \
-			  ft_lstadd_front.c \
-			  ft_lstsize.c \
-			  ft_lstlast.c \
-		 	  ft_lstadd_back.c \
-			  ft_lstdelone.c \
-			  ft_lstclear.c \
-			  ft_lstiter.c \
-		 	  ft_lstmap.c  \
-
+			ft_lstadd_front.c \
+			ft_lstsize.c \
+			ft_lstlast.c \
+			ft_lstadd_back.c \
+			ft_lstdelone.c \
+			ft_lstclear.c \
+			ft_lstiter.c \
+			ft_lstmap.c
 
 OBJS = $(SRCS:.c=.o)
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
-all: $(NAME).a
+all: $(NAME)
 
-$(NAME).a: $(OBJS)
-	ar $(ARFLAGS) $(NAME).a $(OBJS)
+$(NAME): $(OBJS)
+	ar $(ARFLAGS) $(NAME) $(OBJS)
 
 %.o: %.c $(INC)
 	$(CC) -c $< -o $@ $(CFLAGS)
@@ -78,10 +77,10 @@ clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	$(RM) $(NAME).a
+	$(RM) $(NAME)
 
 bonus: $(OBJS) $(OBJS_BONUS)
-	ar $(ARFLAGS) $(NAME).a $(OBJS) $(OBJS_BONUS)
+	ar $(ARFLAGS) $(NAME) $(OBJS) $(OBJS_BONUS)
 
 re: fclean all
 
