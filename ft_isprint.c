@@ -6,13 +6,13 @@
 /*   By: yokten <yokten@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 18:59:06 by yokten            #+#    #+#             */
-/*   Updated: 2022/12/13 11:23:12 by yokten           ###   ########.fr       */
+/*   Updated: 2022/12/28 11:25:57 by yokten           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint (int c)
+int	ft_isprint(int c)
 {
-    return(c >= 32 && c < 127);
+	return (c >= 32 && c < 127);
 }

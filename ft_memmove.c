@@ -6,15 +6,15 @@
 /*   By: yokten <yokten@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 18:59:13 by yokten            #+#    #+#             */
-/*   Updated: 2022/12/13 17:32:57 by yokten           ###   ########.fr       */
+/*   Updated: 2022/12/28 15:24:33 by yokten           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (dst == src || !len)
@@ -23,26 +23,17 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 	{
 		while (i < len)
 		{
-			*((char	*)dst + i) = *((char *) src + i);
+			*((char *)dst + i) = *((char *)src + i);
 			i++;
 		}
 	}
 	else
 	{
-		while(len)
+		while (len)
 		{
 			*((char *)dst + len - 1) = *((char *)src + len - 1);
 			len--;
 		}
 	}
-	return(dst); 
+	return (dst);
 }
-/*
-int main()
-{
-	char a[]="yasar";
-	char b[]= "mustafa";
-	ft_memmove(b,a,4);
-	printf("%s", b);
-}
-*/

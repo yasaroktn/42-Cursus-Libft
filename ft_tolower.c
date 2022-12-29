@@ -6,15 +6,15 @@
 /*   By: yokten <yokten@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 19:00:47 by yokten            #+#    #+#             */
-/*   Updated: 2022/12/17 20:30:43 by yokten           ###   ########.fr       */
+/*   Updated: 2022/12/28 16:32:36 by yokten           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if(c >= 'A' && c <= 'Z')
-        return (c += 32);
-    return (c);
+	if (c >= 'A' && c <= 'Z')
+		return (c += 32);
+	return (c);
 }
