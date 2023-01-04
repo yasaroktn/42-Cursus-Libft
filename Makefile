@@ -6,13 +6,12 @@
 #    By: yokten <yokten@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/12 15:04:14 by yokten            #+#    #+#              #
-#    Updated: 2022/12/27 23:49:06 by yokten           ###   ########.fr        #
+#    Updated: 2023/01/02 20:37:00 by yokten           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libft.a
 CC = gcc
-INC = libft.h
 CFLAGS = -Wall -Wextra -Werror
 ARFLAGS = -rcs
 RM = rm -rf
@@ -69,9 +68,6 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar $(ARFLAGS) $(NAME) $(OBJS)
-
-%.o: %.c $(INC)
-	$(CC) -c $< -o $@ $(CFLAGS)
 
 clean:
 	$(RM) $(OBJS) $(OBJS_BONUS)

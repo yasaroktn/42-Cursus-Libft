@@ -6,7 +6,7 @@
 /*   By: yokten <yokten@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 16:51:35 by yokten            #+#    #+#             */
-/*   Updated: 2022/12/29 20:32:51 by yokten           ###   ########.fr       */
+/*   Updated: 2023/01/03 09:16:36 by yokten           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	**ft_split(char	const	*s, char c)
 		return (NULL);
 	x = 0;
 	j = total_string(s, c);
-	a = ft_calloc(j, sizeof(char *) + 1);
+	a = ft_calloc(j + 1, sizeof(char *));
 	if (!a)
 		return (NULL);
 	while (*s)
